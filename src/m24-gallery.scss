@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+
+/*! purgecss start ignore !*/
+
+:root {
+  --mainGalleryColor: grey;
+  --secondaryGalleryColor: #292727;
+  --mainGalleryFontColor: white;
+}
+
+.article-gallery {
+
+  svg, span {
+    @apply fill-current;
+    color: var(--mainGalleryIconColor, white);
+  }
+
+  .gallery {
+    @apply relative p-2 pt-0;
+    background-color: var(--secondaryGalleryColor, black);
+
+    & > div:first-child {
+      @apply flex justify-between items-center py-2;
+      h4 {
+        @apply uppercase font-semibold text-base;
+        color: var(--mainGalleryFontColor, white);
+      }
+      svg, span {
+        @apply fill-current;
+        color: var(--mainGalleryIconColor, white);
+      }
+      & > div {
+        @apply flex items-center justify-center;
+        span { @apply pl-2; }
+        span:nth-child(3) { @apply cursor-pointer hidden; }
+      }
+    }
+
+    .thumbs {
+      @apply flex w-full pt-2 overflow-x-hidden;
+      & > div {
+        @apply flex w-full;
+        transition: transform .5s ease-in-out;
+        div {
+          @apply border-4 border-transparent cursor-pointer flex-shrink-0;
+          &.active {
+            border-color: var(--mainGalleryColor, grey);
+          }
+        }
+      }
+    }
+
+    .main-image {
+      @apply relative flex items-center justify-center;
+      transition: all 1s ease-in-out;
+
+      img { transition: all 1s ease-in-out; }
+
+      .zoom {
+        @apply w-full h-full absolute top-0 left-0 hidden items-center justify-center cursor-pointer;
+        background: rgba(0, 0, 0, 0.5);
+        transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+        z-index: 2;
+        @screen lg{ @apply flex; }
+      }
+
+      .navigation {
+        @apply absolute top-0 left-0 w-full h-full flex justify-between items-center;
+
+        button {
+          @apply p-2 h-8 w-8 flex items-center justify-center;
+          background-color: var(--mainGalleryColor, grey);
+          z-index: 3;
+          transition: all .5s ease-in-out;
+        }
+      }
+    }
+
+    .description {
+      p {
+        @apply font-normal text-sm border-4 border-transparent;
+        color: var(--mainGalleryFontColor, white);
+      }
+    }
+  }
+
+  /** Resizing helpers **/
+  .expand-container {
+    transition: all 1s ease-in-out, background 1s ease 1s;
+
+    &.expanded {
+      @apply fixed z-50 bg-black-lightest;
+
+      &.animate {
+        @apply w-full h-full top-0 left-0 flex justify-center items-center;
+
+        .main-image {
+          // Set min-height to the image wrapper to prevent gallery jumping around due to
+          // differently sized images
+          min-height: 65vh;
+          @screen lg { min-height: 70vh; }
+          img {
+            // Set max-height of the image to display the full image in an acceptable area
+            @apply object-contain;
+            max-height: 65vh;
+            @screen lg { max-height: 70vh; }
+          }
+        }
+
+        .navigation button {
+          @apply h-24 w-16;
+        }
+
+        .gallery {
+          transition: all 1s ease-in-out;
+          width: 80vw;
+
+          & > div:first-child {
+            & > div {
+              span:nth-child(3) { @apply flex items-center justify-center; }
+            }
+          }
+        }
+
+        .zoom { @apply hidden; }
+      }
+    }
+  }
+}
+
+/*! purgecss end ignore !*/
+
+@tailwind utilities;
