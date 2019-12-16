@@ -68,7 +68,7 @@ export default {
       default: 'Image Gallery',
     },
     imageSizes: {
-      type: Array,
+      type: Object,
       required: false,
       default: () => {
         return {
@@ -80,7 +80,7 @@ export default {
       }
     },
     thumbSizes: {
-      type: Array,
+      type: Object,
       required: false,
       default: () => {
         return {
