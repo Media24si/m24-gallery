@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "A simple vuejs gallery component in use by Media24(.si)",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Media24si/m24-gallery.git"
+  },
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -14,6 +18,10 @@
   },
   "author": "Adam Stradovnik",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Media24si/m24-gallery/issues"
+  },
+  "homepage": "https://github.com/Media24si/m24-gallery",
   "devDependencies": {
     "cross-env": "^6.0.3",
     "laravel-mix": "^5.0.0",
