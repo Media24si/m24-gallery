@@ -52,10 +52,10 @@ The images array should contain items with the following properties...
 [
   {
     "id": 123213,
-    "title" => "image.jpg",
-    "description" => "A custom image example",
-    "author" => "Author name goes here",
-    "url" => "http://image-location.com/public/images-cache/##WIDTH##x##HEIGHT##/2019/11/20/caee7c0e9c8cdf002a924d508044571a/5ddae71a1377e/caee7c0e9c8cdf002a924d508044571a.jpeg"
+    "title": "image.jpg",
+    "description": "A custom image example",
+    "author": "Author name goes here",
+    "url": "http://image-location.com/public/images-cache/##WIDTH##x##HEIGHT##/2019/11/20/caee7c0e9c8cdf002a924d508044571a/5ddae71a1377e/caee7c0e9c8cdf002a924d508044571a.jpeg"
   }
 ]
 ```
