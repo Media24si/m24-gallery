@@ -29,7 +29,8 @@ You can customize the color of the arrows and borders via
 :root {
   --mainGalleryColor: grey; /* Color of navigation buttons and thumb borders */
   --secondaryGalleryColor: #292727; /* Color of the gallery background */
-  --mainGalleryFontColor: white; /* Font color */
+  --mainGalleryFontColor: white;
+  --mainGalleryIconColor: white;
 }
 ```
 
