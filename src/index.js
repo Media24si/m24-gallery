@@ -1,15 +1,5 @@
-// import ArticleGallery from './src/M24Gallery.vue'
-
-// export default {
-//   install: function (Vue, options) {
-//     Vue.component(ArticleGallery.name, ArticleGallery)
-//   }
-// }
-
-// export { ArticleGallery }
-
 // Import vue component
-import component from './src/M24Gallery.vue';
+import component from './M24Gallery.vue';
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {

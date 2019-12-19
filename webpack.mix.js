@@ -6,7 +6,7 @@ const env = process.env.NODE_ENV
 let minifiedExt = env === 'production' ? '.min' : ''
 
 mix
-  .js('index.js', 'dist/m24-gallery'+ minifiedExt +'.js')
+  .js('src/index.js', 'dist/m24-gallery'+ minifiedExt +'.js')
   .sass('src/m24-gallery.scss','dist/m24-gallery'+ minifiedExt +'.css')
   .options({
     processCssUrls: false,
@@ -17,9 +17,7 @@ mix
     globs: [
       path.join(__dirname, 'src/*'),
     ],
-    whitelist: [
-    ],
-    whitelistPatterns: [
-    ],
+    whitelist: [],
+    whitelistPatterns: [],
  })
 

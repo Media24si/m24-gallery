@@ -14,22 +14,35 @@
 
   svg, span {
     @apply fill-current;
+    color: white;
     color: var(--mainGalleryIconColor, white);
   }
 
-  h4 { color: var(--mainGalleryFontColor, white); }
+  h4 {
+    color: white;
+    color: var(--mainGalleryFontColor, white);
+  }
 
-  .gallery { background-color: var(--secondaryGalleryColor, black); }
+  .gallery {
+    background-color: #292727;
+    background-color: var(--secondaryGalleryColor, black);
+  }
 
   .description {
-    p { color: var(--mainGalleryFontColor, white); }
+    p {
+      color: white;
+      color: var(--mainGalleryFontColor, white);
+    }
   }
 
   .thumbs {
     & > div {
       transition: transform .5s ease-in-out;
       div {
-        &.active { border-color: var(--mainGalleryColor, grey); }
+        &.active {
+          border-color: grey;
+          border-color: var(--mainGalleryColor, grey);
+        }
       }
     }
   }
@@ -42,6 +55,7 @@
 
   .navigation {
     button {
+      background-color: grey;
       background-color: var(--mainGalleryColor, grey);
       z-index: 3;
       transition: all .5s ease-in-out;

@@ -1,8 +1,8 @@
 {
   "name": "m24-gallery",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A simple vuejs gallery component in use by Media24(.si)",
-  "main": "index.js",
+  "main": "dist/m24-gallery.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Media24si/m24-gallery.git"
@@ -28,6 +28,7 @@
     "laravel-mix-purgecss": "^4.2.0",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.1.4",
+    "vue-template-compiler": "^2.6.11"
   }
 }

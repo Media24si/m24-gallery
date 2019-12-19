@@ -1,9 +1,5 @@
 # M24 Article Gallery
 
-## Requirements
-
-Laravel-mix, Webpack or similar, since it is not pre-built or pre-compiled.
-
 ## Installation
 
 `npm install m24-gallery`
@@ -13,10 +9,9 @@ Laravel-mix, Webpack or similar, since it is not pre-built or pre-compiled.
 Inside your main vue file:
 
 ```javascript
-import { ArticleGallery } from 'm24-gallery'
 import Vue from 'vue'
 
-Vue.component('article-gallery', ArticleGallery)
+Vue.component('article-gallery', require('./../../../m24-gallery').default)
 ```
 
 Inside your css or similar be sure to include the gallery css located at `node_modules/m24-gallery/dist/m24-gallery.min.css`
