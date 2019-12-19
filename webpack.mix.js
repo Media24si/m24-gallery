@@ -3,9 +3,11 @@ const tailwindcss = require('tailwindcss')
 require('laravel-mix-purgecss')
 const env = process.env.NODE_ENV
 
-let cssPath = env === 'production' ? 'dist/m24-gallery.min.css' : 'dist/m24-gallery.css'
+let minifiedExt = env === 'production' ? '.min' : ''
 
-mix.sass('src/m24-gallery.scss', cssPath)
+mix
+  .js('index.js', 'dist/m24-gallery'+ minifiedExt +'.js')
+  .sass('src/m24-gallery.scss','dist/m24-gallery'+ minifiedExt +'.css')
   .options({
     processCssUrls: false,
     postCss: [ tailwindcss('./tailwind.config.js') ],
