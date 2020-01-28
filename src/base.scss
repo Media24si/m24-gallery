@@ -5,6 +5,7 @@
   --secondaryGalleryColor: #292727;
   --mainGalleryFontColor: white;
   --mainGalleryIconColor: white;
+  --expandedGalleryBackground: rgba(0, 0, 0, 0.6);
 }
 
 .article-gallery {
@@ -70,7 +71,9 @@
     transition: all 1s ease-in-out, background 1s ease 1s;
 
     &.expanded {
-      @apply fixed z-50 bg-black-lightest;
+      @apply fixed z-50;
+      background-color: rgba(0, 0, 0, 0.6);
+      background-color: var(--expandedGalleryBackground);
 
       &.animate {
         @apply w-full h-full top-0 left-0 flex justify-center items-center;

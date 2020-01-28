@@ -26,6 +26,7 @@ You can customize the color of the arrows and borders via
   --secondaryGalleryColor: #292727; /* Color of the gallery background */
   --mainGalleryFontColor: white;
   --mainGalleryIconColor: white;
+  --expandedGalleryBackground: rgba(0, 0, 0, 0.6); /* Color of the opaque background when expanding the gallery */
 }
 ```
 

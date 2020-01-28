@@ -1,6 +1,6 @@
 {
   "name": "m24-gallery",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A simple vuejs gallery component in use by Media24(.si)",
   "main": "dist/m24-gallery.min.js",
   "repository": {
