@@ -1,4 +1,5 @@
 module.exports = {
+  prefix: 'm24g-',
   theme: {
     extend: {
       colors: {

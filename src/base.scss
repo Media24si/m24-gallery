@@ -71,12 +71,12 @@
     transition: all 1s ease-in-out, background 1s ease 1s;
 
     &.expanded {
-      @apply fixed z-50;
+      @apply m24g-fixed m24g-z-50;
       background-color: rgba(0, 0, 0, 0.6);
       background-color: var(--expandedGalleryBackground);
 
       &.animate {
-        @apply w-full h-full top-0 left-0 flex justify-center items-center;
+        @apply m24g-w-full m24g-h-full m24g-top-0 m24g-left-0 m24g-flex m24g-justify-center m24g-items-center;
 
         .main-image {
           // Set min-height to the image wrapper to prevent gallery jumping around due to
@@ -85,13 +85,13 @@
           @screen lg { min-height: 70vh; }
           img {
             // Set max-height of the image to display the full image in an acceptable area
-            @apply object-contain;
+            @apply m24g-object-contain;
             max-height: 65vh;
             @screen lg { max-height: 70vh; }
           }
         }
 
-        .navigation button { @apply h-24 w-16; }
+        .navigation button { @apply m24g-h-24 m24g-w-16; }
 
         .gallery {
           transition: all 1s ease-in-out;
@@ -99,12 +99,12 @@
 
           & > div:first-child {
             & > div {
-              span:nth-child(3) { @apply flex items-center justify-center; }
+              span:nth-child(3) { @apply m24g-flex m24g-items-center m24g-justify-center; }
             }
           }
         }
 
-        .zoom { @apply hidden; }
+        .zoom { @apply m24g-hidden; }
       }
     }
   }
