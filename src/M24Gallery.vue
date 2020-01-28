@@ -1,7 +1,7 @@
 <template>
-  <div class="article-gallery" ref="articleGallery">
-    <div class="expand-container" :class="{ expanded: isExpanded }">
-      <div class="gallery m24g-relative m24g-p-2 m24g-pt-0">
+  <div class="m24g-article-gallery" ref="articleGallery">
+    <div class="m24g-expand-container" :class="{ 'm24g-expanded': isExpanded }">
+      <div class="m24g-gallery m24g-relative m24g-p-2 m24g-pt-0">
         <div class="m24g-flex m24g-justify-between m24g-items-center m24g-py-2">
           <h4 class="m24g-uppercase m24g-font-semibold m24g-text-base">{{ title }}</h4>
           <div class="m24g-flex m24g-items-center m24g-justify-center">
@@ -16,14 +16,14 @@
             </span>
           </div>
         </div>
-        <div class="main-image m24g-relative m24g-flex m24g-items-center m24g-justify-center m24g-group">
+        <div class="m24g-main-image m24g-relative m24g-flex m24g-items-center m24g-justify-center m24g-group">
           <picture>
             <img class="m24g-w-full" :src="displayedImage.url | crop(mainImageWidthSize, mainImageHeightSize)" :alt="displayedImage.title">
           </picture>
-          <div class="zoom m24g-w-full m24g-h-full m24g-absolute m24g-top-0 m24g-left-0 m24g-hidden m24g-items-center m24g-justify-center m24g-cursor-pointer m24g-invisible m24g-opacity-0 group-hover:m24g-visible group-hover:m24g-opacity-100 lg:m24g-flex" @click.prevent="openGallery">
+          <div class="m24g-zoom m24g-w-full m24g-h-full m24g-absolute m24g-top-0 m24g-left-0 m24g-hidden m24g-items-center m24g-justify-center m24g-cursor-pointer m24g-invisible m24g-opacity-0 group-hover:m24g-visible group-hover:m24g-opacity-100 lg:m24g-flex" @click.prevent="openGallery">
             <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="search-plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="m24g-w-10 m24g-h-10"><path fill="currentColor" d="M312 196v24c0 6.6-5.4 12-12 12h-68v68c0 6.6-5.4 12-12 12h-24c-6.6 0-12-5.4-12-12v-68h-68c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h68v-68c0-6.6 5.4-12 12-12h24c6.6 0 12 5.4 12 12v68h68c6.6 0 12 5.4 12 12zm196.5 289.9l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L347.5 387.1c-2.3-2.3-3.5-5.3-3.5-8.5v-13.2c-36.5 31.5-84 50.6-136 50.6C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 52-19.1 99.5-50.6 136h13.2c3.2 0 6.2 1.3 8.5 3.5l121.4 121.4c4.7 4.7 4.7 12.3 0 17zM368 208c0-88.4-71.6-160-160-160S48 119.6 48 208s71.6 160 160 160 160-71.6 160-160z" class=""></path></svg>
           </div>
-          <div class="navigation m24g-absolute m24g-top-0 m24g-left-0 m24g-w-full m24g-h-full m24g-flex m24g-justify-between m24g-items-center">
+          <div class="m24g-navigation m24g-absolute m24g-top-0 m24g-left-0 m24g-w-full m24g-h-full m24g-flex m24g-justify-between m24g-items-center">
             <button class="m24g-p-2 m24g-h-8 m24g-w-8 m24g-flex m24g-items-center m24g-justify-center m24g-mr-2" @click.prevent="previous">
               <span>
                 <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="m24g-w-4 m24g-h-4"><path fill="currentColor" d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z" class=""></path></svg>
@@ -36,7 +36,7 @@
             </button>
           </div>
         </div>
-        <div class="thumbs m24g-flex m24g-w-full m24g-pt-2 m24g-overflow-x-hidden">
+        <div class="m24g-thumbs m24g-flex m24g-w-full m24g-pt-2 m24g-overflow-x-hidden">
           <div class="m24g-flex m24g-w-full" :style="thumbMoveStyle">
             <div class="m24g-border-4 m24g-border-transparent m24g-cursor-pointer m24g-flex-shrink-0" :class="{ active: image.id === displayedImage.id, 'm24g-w-1/4': !isExpanded, 'm24g-w-1/6': isExpanded }" v-for="(image, index) in images" :key="image.id" @click.prevent="switchDisplayedImage(image, index)">
               <picture>
@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div class="description">
+        <div class="m24g-description">
           <p class="m24g-font-normal m24g-text-sm m24g-border-4 m24g-border-transparent" v-if="displayedImage.description !== ''">{{ displayedImage.description }}</p>
           <p class="m24g-font-normal m24g-text-sm m24g-border-4 m24g-border-transparent" v-if="displayedImage.author !== ''">Foto: {{ displayedImage.author }}</p>
         </div>
@@ -144,9 +144,9 @@ export default {
   methods: {
     animateGallery() {
       const articleGalleryElement = this.$refs.articleGallery
-      const expandContainer = articleGalleryElement.querySelector('.expand-container')
-      const gallery = expandContainer.querySelector('.gallery')
-      const mainImageContainer = gallery.querySelector('.main-image')
+      const expandContainer = articleGalleryElement.querySelector('.m24g-expand-container')
+      const gallery = expandContainer.querySelector('.m24g-gallery')
+      const mainImageContainer = gallery.querySelector('.m24g-main-image')
       const mainImageTag = mainImageContainer.querySelector('img')
 
       // Set height to the parent container so it doesnt jump when we fix the content
@@ -172,7 +172,7 @@ export default {
         expandContainer.style.removeProperty('width')
         expandContainer.style.removeProperty('top')
         expandContainer.style.removeProperty('left')
-        expandContainer.classList.add('animate')
+        expandContainer.classList.add('m24g-animate')
 
         gallery.style.removeProperty('width')
         gallery.style.removeProperty('height')

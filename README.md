@@ -16,6 +16,14 @@ Vue.component('article-gallery', require('./../../../m24-gallery').default)
 
 Inside your css or similar be sure to include the gallery css located at `node_modules/m24-gallery/dist/m24-gallery.min.css`
 
+If you're using PurgeCSS be sure to whitelist the m24g- pattern inside the config, for example:
+
+```javascript
+whitelistPatterns: [
+  /^m24g-/
+],
+```
+
 ## Customization
 
 You can customize the color of the arrows and borders via

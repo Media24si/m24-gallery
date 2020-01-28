@@ -8,7 +8,7 @@
   --expandedGalleryBackground: rgba(0, 0, 0, 0.6);
 }
 
-.article-gallery {
+.m24g-article-gallery {
 
   svg, span {
     @apply fill-current;
@@ -21,19 +21,19 @@
     color: var(--mainGalleryFontColor, white);
   }
 
-  .gallery {
+  .m24g-gallery {
     background-color: #292727;
     background-color: var(--secondaryGalleryColor, black);
   }
 
-  .description {
+  .m24g-description {
     p {
       color: white;
       color: var(--mainGalleryFontColor, white);
     }
   }
 
-  .thumbs {
+  .m24g-thumbs {
     & > div {
       transition: transform .5s ease-in-out;
       div {
@@ -45,13 +45,13 @@
     }
   }
 
-  .main-image {
+  .m24g-main-image {
     transition: all 1s ease-in-out;
 
     img { transition: all 1s ease-in-out; }
   }
 
-  .navigation {
+  .m24g-navigation {
     button {
       background-color: grey;
       background-color: var(--mainGalleryColor, grey);
@@ -60,25 +60,25 @@
     }
   }
 
-  .zoom {
+  .m24g-zoom {
     background: rgba(0, 0, 0, 0.5);
     transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
     z-index: 2;
   }
 
   /** Resizing helpers **/
-  .expand-container {
+  .m24g-expand-container {
     transition: all 1s ease-in-out, background 1s ease 1s;
 
-    &.expanded {
+    &.m24g-expanded {
       @apply m24g-fixed m24g-z-50;
       background-color: rgba(0, 0, 0, 0.6);
       background-color: var(--expandedGalleryBackground);
 
-      &.animate {
+      &.m24g-animate {
         @apply m24g-w-full m24g-h-full m24g-top-0 m24g-left-0 m24g-flex m24g-justify-center m24g-items-center;
 
-        .main-image {
+        .m24g-main-image {
           // Set min-height to the image wrapper to prevent gallery jumping around due to
           // differently sized images
           min-height: 65vh;
@@ -91,9 +91,9 @@
           }
         }
 
-        .navigation button { @apply m24g-h-24 m24g-w-16; }
+        .m24g-navigation button { @apply m24g-h-24 m24g-w-16; }
 
-        .gallery {
+        .m24g-gallery {
           transition: all 1s ease-in-out;
           width: 80vw;
 
@@ -104,7 +104,7 @@
           }
         }
 
-        .zoom { @apply m24g-hidden; }
+        .m24g-zoom { @apply m24g-hidden; }
       }
     }
   }
